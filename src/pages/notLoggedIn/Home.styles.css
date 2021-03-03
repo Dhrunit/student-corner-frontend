@@ -1,0 +1,35 @@
+.hero__svg {
+	width: 35vw;
+	height: 70vh;
+}
+.hero__text h1 {
+	font-size: 45px;
+	font-weight: 800;
+	text-transform: uppercase;
+	margin-top: -5rem;
+	margin-bottom: 1rem;
+}
+.hero__text p {
+	font-weight: 600;
+	letter-spacing: 2.5px;
+	margin-bottom: 1.5rem;
+}
+.blue {
+	color: #46dbc9;
+}
+.btn-blue {
+	display: inline-block;
+	position: absolute;
+	padding: 1rem 2rem;
+	background-color: #46dbc9;
+	color: #fff;
+	font-size: 17px;
+	border-radius: 50px;
+	text-transform: uppercase;
+	font-weight: 600;
+}
+.btn-blue:hover {
+	color: #fff;
+	background-color: #40c2b3;
+	transition: all 0.4s;
+}

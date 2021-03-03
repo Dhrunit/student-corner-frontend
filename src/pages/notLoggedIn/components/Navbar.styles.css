@@ -1,0 +1,33 @@
+.container {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-top: 1.5rem;
+}
+.logo {
+	/* cursor: pointer; */
+	/* text-decoration: none; */
+}
+.logo__text {
+	cursor: pointer;
+	font-size: 3rem;
+	font-weight: 800;
+	color: #000;
+	text-decoration: none !important;
+}
+.nav-links a {
+	text-decoration: none;
+	color: black;
+	font-size: 1.2rem;
+	margin: 1rem;
+	font-weight: 600;
+	background: transparent;
+	border: 2px solid #46dbc9;
+	padding: 0.7rem 1.5rem;
+	border-radius: 50px;
+}
+.nav-links a:hover {
+	background: #46dbc9;
+	color: #fff;
+	transition: all 0.3s;
+}
