@@ -1,10 +1,11 @@
 import Home from './pages/notLoggedIn/Home'
+import { Route, Switch } from 'react-router-dom'
 
 function App() {
 	return (
-		<div className='App'>
-			<Home />
-		</div>
+		<Switch>
+			<Route path='/' exact component={Home} />
+		</Switch>
 	)
 }
 

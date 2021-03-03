@@ -1,0 +1,24 @@
+.about {
+	height: 100vh;
+	text-align: center;
+}
+
+.about_text {
+	margin-top: 2rem;
+	font-weight: 800;
+}
+
+.purple {
+	color: #6c63ff;
+}
+
+.about-subtext {
+	margin-top: 2rem;
+	font-size: 1.2rem;
+	font-weight: 500;
+}
+
+.about__svg {
+	width: 450px;
+	height: 250px;
+}

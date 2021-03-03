@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Navbar from './components/Navbar'
+import About from './About'
 import hero from '../../assets/hero.svg'
 import './Home.styles.css'
 import { Link } from 'react-router-dom'
@@ -23,6 +24,9 @@ export class Home extends Component {
 						</Link>
 					</div>
 					<img className='hero__svg' src={hero} alt='' />
+				</div>
+				<div className='container' id='about'>
+					<About />
 				</div>
 			</div>
 		)
