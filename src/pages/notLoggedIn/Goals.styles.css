@@ -1,0 +1,25 @@
+.goals {
+	text-align: center;
+	height: 100vh;
+	margin-top: 6rem;
+}
+.goals img {
+	width: 250px;
+}
+.section-heading {
+	text-align: center;
+	color: #46dbc9;
+	margin-bottom: 2.5rem;
+	font-weight: 800;
+}
+.col {
+	margin: 1rem 2rem;
+}
+.goals_subtitle {
+	font-size: 1rem;
+	font-weight: 500;
+}
+.max-width {
+	max-width: 1200px;
+	margin-left: 5rem;
+}

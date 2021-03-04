@@ -1,0 +1,13 @@
+.footer_links {
+	background-color: #242029;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 1.2rem;
+	height: 75px;
+}
+.footer_links a {
+	margin: 1.5rem;
+	text-decoration: none;
+	color: #fff;
+}

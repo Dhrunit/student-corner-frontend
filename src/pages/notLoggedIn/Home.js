@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import Navbar from './components/Navbar'
 import About from './About'
+import Goals from './Goals'
+import Footer from './components/Footer'
 import hero from '../../assets/hero.svg'
 import './Home.styles.css'
 import { Link } from 'react-router-dom'
@@ -27,6 +29,12 @@ export class Home extends Component {
 				</div>
 				<div className='container' id='about'>
 					<About />
+				</div>
+				<div id='goals'>
+					<Goals />
+				</div>
+				<div className='footer'>
+					<Footer />
 				</div>
 			</div>
 		)
