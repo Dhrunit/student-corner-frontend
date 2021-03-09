@@ -10,6 +10,7 @@ export default function Footer() {
 				<a href='#about'>About</a>
 				<a href='#goals'>Goals</a>
 				<Link to='/auth'>Signup</Link>
+				<Link to='/login'>Login</Link>
 			</div>
 		</div>
 	)

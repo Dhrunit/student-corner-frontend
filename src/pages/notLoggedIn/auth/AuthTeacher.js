@@ -142,13 +142,6 @@ export class AuthTeacher extends Component {
 									</button>
 								</div>
 							</form>
-							<h6 className='login-text'>
-								Already a member ? click{' '}
-								<Link to='login' style={{ color: '#000' }}>
-									here
-								</Link>{' '}
-								to login
-							</h6>
 						</div>
 					</div>
 				</div>

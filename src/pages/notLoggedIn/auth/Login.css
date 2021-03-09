@@ -1,0 +1,29 @@
+h2 {
+	font-weight: 600;
+	text-align: center;
+}
+h6 {
+	text-align: center;
+}
+
+.blue-container {
+	padding: 3rem;
+	border-radius: 10px;
+	background-color: #46dbc9;
+	color: #fff;
+	font-weight: 600;
+	margin-bottom: 5rem;
+}
+.login {
+	max-width: 1200px;
+	margin-left: auto;
+	margin-right: auto;
+}
+.login_svg {
+	width: 350px;
+	margin-left: 5rem;
+}
+.alignCenter {
+	margin-top: 4rem;
+	margin-bottom: auto;
+}

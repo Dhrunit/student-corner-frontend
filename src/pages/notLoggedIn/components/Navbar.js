@@ -14,6 +14,7 @@ export default function Navbar(props) {
 					<a href={props.auth ? '/#about' : '#about'}>About</a>
 					<a href={props.auth ? '/#goals' : '#goals'}>Goals</a>
 					<Link to='/auth'>Signup</Link>
+					<Link to='/login'>Login</Link>
 				</div>
 			</div>
 		</>
