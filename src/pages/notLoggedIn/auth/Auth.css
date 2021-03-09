@@ -22,6 +22,7 @@
 	background-color: #46dbc9;
 	color: #fff;
 	font-weight: 600;
+	margin-bottom: 5rem;
 }
 .button-white {
 	color: #fff;
@@ -38,4 +39,8 @@
 	border: 2px solid #fff;
 	color: #000;
 	transition: all 0.5s;
+}
+.login-text {
+	margin-top: 1rem;
+	color: #fff;
 }
