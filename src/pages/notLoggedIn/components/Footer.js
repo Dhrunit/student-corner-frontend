@@ -9,7 +9,7 @@ export default function Footer() {
 				<Link to='/'>Home</Link>
 				<a href='#about'>About</a>
 				<a href='#goals'>Goals</a>
-				<Link to='/signup'>Signup</Link>
+				<Link to='/auth'>Signup</Link>
 			</div>
 		</div>
 	)

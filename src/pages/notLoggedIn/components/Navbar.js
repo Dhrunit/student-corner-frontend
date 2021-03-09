@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import './Navbar.styles.css'
-export default function Navbar() {
+export default function Navbar(props) {
 	return (
 		<>
 			<div className='container'>
@@ -11,9 +11,9 @@ export default function Navbar() {
 					</Link>
 				</div>
 				<div className='nav-links'>
-					<a href='#about'>About</a>
-					<a href='#goals'>Goals</a>
-					<a href='#signup'>Signup</a>
+					<a href={props.auth ? '/#about' : '#about'}>About</a>
+					<a href={props.auth ? '/#goals' : '#goals'}>Goals</a>
+					<Link to='/auth'>Signup</Link>
 				</div>
 			</div>
 		</>
