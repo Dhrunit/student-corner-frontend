@@ -10,6 +10,9 @@ export class Login extends Component {
 			password: '',
 		}
 	}
+	onChange = (e) => {
+		this.setState({ [e.target.name]: e.target.value })
+	}
 	render() {
 		return (
 			<div className='login'>
@@ -21,40 +24,47 @@ export class Login extends Component {
 							<img
 								src={login}
 								className='login_svg'
-								alt=''
-								srcset=''
+								alt='login_svg'
 							/>
 						</div>
 						<div className='col-md alignCenter'>
-							<form class='row g-3'>
-								<div class='col-md-12'>
+							<form className='row g-3'>
+								<div className='col-md-12'>
 									<label
-										for='email'
+										htmlFor='email'
 										style={{ fontSize: '1.2rem' }}>
 										E-mail
 									</label>
 									<input
+										onChange={this.onChange}
+										value={this.state.email}
+										name='email'
 										type='email'
-										class='form-control mb-3'
+										className='form-control mb-3'
 										id='email'
 										placeholder='example: test123@gmail.com'
 									/>
 								</div>
-								<div class='col-md-12'>
+								<div className='col-md-12'>
 									<label
-										for='password'
+										htmlFor='password'
 										style={{ fontSize: '1.2rem' }}>
 										Password
 									</label>
 									<input
+										onChange={this.onChange}
+										value={this.state.password}
+										name='password'
 										type='password'
-										class='form-control mb-2'
+										className='form-control mb-2'
 										id='password'
 										placeholder='example: John Doe'
 									/>
 								</div>
-								<div class='col-12'>
-									<button type='submit' class='button-white'>
+								<div className='col-12'>
+									<button
+										type='submit'
+										className='button-white'>
 										Sign up
 									</button>
 								</div>

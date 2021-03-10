@@ -34,7 +34,7 @@ export default function About() {
 					dui interdum consequat.
 				</p>
 			</div>
-			<img className='about__svg' src={about} alt='' srcset='' />
+			<img className='about__svg' src={about} alt='about_svg' />
 		</div>
 	)
 }

@@ -32,10 +32,10 @@ export class AuthTeacher extends Component {
 							to signup/login
 						</p>
 						<div className='blue-container'>
-							<form class='row g-3'>
-								<div class='col-md-6'>
+							<form className='row g-3'>
+								<div className='col-md-6'>
 									<label
-										for='fullName'
+										htmlFor='fullName'
 										style={{
 											marginLeft: '-28rem',
 											fontSize: '1.2rem',
@@ -47,14 +47,14 @@ export class AuthTeacher extends Component {
 										onChange={this.onChange}
 										value={this.state.name}
 										type='text'
-										class='form-control mb-2'
+										className='form-control mb-2'
 										id='fullName'
 										placeholder='example: John Doe'
 									/>
 								</div>
-								<div class='col-md-6'>
+								<div className='col-md-6'>
 									<label
-										for='email'
+										htmlFor='email'
 										style={{
 											marginLeft: '-29rem',
 											fontSize: '1.2rem',
@@ -66,14 +66,14 @@ export class AuthTeacher extends Component {
 										onChange={this.onChange}
 										value={this.state.email}
 										type='email'
-										class='form-control mb-2'
+										className='form-control mb-2'
 										id='email'
 										placeholder='example: test123@gmail.com'
 									/>
 								</div>
-								<div class='col-md-6'>
+								<div className='col-md-6'>
 									<label
-										for='empno'
+										htmlFor='empno'
 										style={{
 											marginLeft: '-26.5rem',
 											fontSize: '1.2rem',
@@ -85,15 +85,15 @@ export class AuthTeacher extends Component {
 										onChange={this.onChange}
 										value={this.state.employeeId}
 										type='text'
-										class='form-control'
+										className='form-control'
 										id='empno'
 										placeholder='example: 17077'
 									/>
 								</div>
-								<div class='col-md-6'>
+								<div className='col-md-6'>
 									<label
-										for='mobileNo'
-										class='form-label'
+										htmlFor='mobileNo'
+										className='form-label'
 										style={{
 											marginLeft: '-28rem',
 											fontSize: '1.2rem',
@@ -105,15 +105,15 @@ export class AuthTeacher extends Component {
 										onChange={this.onChange}
 										value={this.state.mobileNo}
 										type='text'
-										class='form-control'
+										className='form-control'
 										id='mobileNo'
 										placeholder='example: 9865741230'
 									/>
 								</div>
 
-								<div class='form-group col-md-6'>
+								<div className='form-group col-md-6'>
 									<label
-										for='department'
+										htmlFor='department'
 										style={{
 											marginLeft: '-26.5rem',
 											fontSize: '1.2rem',
@@ -125,7 +125,7 @@ export class AuthTeacher extends Component {
 										onChange={this.onChange}
 										value={this.state.department}
 										id='department'
-										class='form-control'>
+										className='form-control'>
 										<option selected>
 											Choose department
 										</option>
@@ -137,10 +137,10 @@ export class AuthTeacher extends Component {
 										<option>Civil</option>
 									</select>
 								</div>
-								<div class='col-md-12'>
+								<div className='col-md-12'>
 									<label
-										for='password'
-										class='form-label'
+										htmlFor='password'
+										className='form-label'
 										style={{
 											marginLeft: '-63rem',
 											fontSize: '1.2rem',

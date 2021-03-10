@@ -10,11 +10,11 @@ export default function Goals() {
 			<div className='goals'>
 				<h1 className='section-heading'>Goals</h1>
 				<div className='max-width'>
-					<div class='row'>
-						<div class='col'>
+					<div className='row'>
+						<div className='col'>
 							<img src={savesTime} alt='saves-time' />
 						</div>
-						<div class='col'>
+						<div className='col'>
 							<div className='goals_heading'>
 								<h1>Open for all</h1>
 							</div>
@@ -25,12 +25,12 @@ export default function Goals() {
 								amet, consectetur, adipisci velit.
 							</p>
 						</div>
-						<div class='col'>
+						<div className='col'>
 							<img src={digitalCampus} alt='saves-time' />
 						</div>
 					</div>
-					<div class='row'>
-						<div class='col'>
+					<div className='row'>
+						<div className='col'>
 							<div className='goals_heading'>
 								<h1>Saves Time</h1>
 							</div>
@@ -41,14 +41,14 @@ export default function Goals() {
 								amet, consectetur, adipisci velit.
 							</p>
 						</div>
-						<div class='col'>
+						<div className='col'>
 							<img
 								style={{ marginTop: '-5rem' }}
 								src={openForAll}
 								alt='saves-time'
 							/>
 						</div>
-						<div class='col'>
+						<div className='col'>
 							<div className='goals_heading'>
 								<h1>Digital Campus</h1>
 							</div>

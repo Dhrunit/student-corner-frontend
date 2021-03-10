@@ -37,10 +37,10 @@ export class Auth extends Component {
 							to signup/login
 						</p>
 						<div className='blue-container'>
-							<form class='row g-3'>
-								<div class='col-md-6'>
+							<form className='row g-3'>
+								<div className='col-md-6'>
 									<label
-										for='fullName'
+										htmlFor='fullName'
 										style={{
 											marginLeft: '-28rem',
 											fontSize: '1.2rem',
@@ -52,14 +52,14 @@ export class Auth extends Component {
 										value={this.state.name}
 										name='name'
 										type='text'
-										class='form-control mb-2'
+										className='form-control mb-2'
 										id='fullName'
 										placeholder='example: John Doe'
 									/>
 								</div>
-								<div class='col-md-6'>
+								<div className='col-md-6'>
 									<label
-										for='email'
+										htmlFor='email'
 										style={{
 											marginLeft: '-29rem',
 											fontSize: '1.2rem',
@@ -71,14 +71,14 @@ export class Auth extends Component {
 										onChange={this.onChange}
 										name='email'
 										type='email'
-										class='form-control mb-2'
+										className='form-control mb-2'
 										id='email'
 										placeholder='example: test123@gmail.com'
 									/>
 								</div>
-								<div class='col-md-6'>
+								<div className='col-md-6'>
 									<label
-										for='enrno'
+										htmlFor='enrno'
 										style={{
 											marginLeft: '-23rem',
 											fontSize: '1.2rem',
@@ -90,16 +90,16 @@ export class Auth extends Component {
 										onChange={this.onChange}
 										name='enrollmentNo'
 										type='text'
-										class='form-control'
+										className='form-control'
 										id='enrno'
 										placeholder='example: 170770107183'
 									/>
 								</div>
 
-								<div class='col-md-2'>
+								<div className='col-md-2'>
 									<label
-										for='div'
-										class='form-label '
+										htmlFor='div'
+										className='form-label '
 										style={{
 											marginLeft: '-5rem',
 											fontSize: '1.2rem',
@@ -111,15 +111,15 @@ export class Auth extends Component {
 										onChange={this.onChange}
 										name='division'
 										type='text'
-										class='form-control'
+										className='form-control'
 										id='div'
 										placeholder='example: B'
 									/>
 								</div>
-								<div class='col-md-2'>
+								<div className='col-md-2'>
 									<label
-										for='sem'
-										class='form-label'
+										htmlFor='sem'
+										className='form-label'
 										style={{
 											marginLeft: '-7rem',
 											fontSize: '1.2rem',
@@ -131,17 +131,17 @@ export class Auth extends Component {
 										onChange={this.onChange}
 										name='sem'
 										type='number'
-										class='form-control'
+										className='form-control'
 										id='sem'
 										min='1'
 										max='8'
 										placeholder='example: 5'
 									/>
 								</div>
-								<div class='col-md-2'>
+								<div className='col-md-2'>
 									<label
-										for='rollno'
-										class='form-label'
+										htmlFor='rollno'
+										className='form-label'
 										style={{
 											marginLeft: '-6rem',
 											fontSize: '1.2rem',
@@ -153,14 +153,14 @@ export class Auth extends Component {
 										onChange={this.onChange}
 										name='rollNo'
 										type='text'
-										class='form-control mb-2'
+										className='form-control mb-2'
 										id='rollno'
 										placeholder='example: 49'
 									/>
 								</div>
-								<div class='form-group col-md-6'>
+								<div className='form-group col-md-6'>
 									<label
-										for='department'
+										htmlFor='department'
 										style={{
 											marginLeft: '-26.5rem',
 											fontSize: '1.2rem',
@@ -172,7 +172,7 @@ export class Auth extends Component {
 										value={this.state.department}
 										name='department'
 										id='department'
-										class='form-control'>
+										className='form-control'>
 										<option selected>
 											Choose department
 										</option>
@@ -185,10 +185,10 @@ export class Auth extends Component {
 									</select>
 								</div>
 
-								<div class='col-md-6'>
+								<div className='col-md-6'>
 									<label
-										for='mobileNo'
-										class='form-label'
+										htmlFor='mobileNo'
+										className='form-label'
 										style={{
 											marginLeft: '-28rem',
 											fontSize: '1.2rem',
@@ -200,15 +200,15 @@ export class Auth extends Component {
 										onChange={this.onChange}
 										name='mobileNo'
 										type='text'
-										class='form-control'
+										className='form-control'
 										id='mobileNo'
 										placeholder='example: 9865741230'
 									/>
 								</div>
-								<div class='col-md-12'>
+								<div className='col-md-12'>
 									<label
-										for='password'
-										class='form-label'
+										htmlFor='password'
+										className='form-label'
 										style={{
 											marginLeft: '-63rem',
 											fontSize: '1.2rem',
@@ -220,12 +220,14 @@ export class Auth extends Component {
 										onChange={this.onChange}
 										name='password'
 										type='password'
-										class='form-control'
+										className='form-control'
 										id='password'
 									/>
 								</div>
-								<div class='col-12'>
-									<button type='submit' class='button-white'>
+								<div className='col-12'>
+									<button
+										type='submit'
+										className='button-white'>
 										Sign up
 									</button>
 								</div>
