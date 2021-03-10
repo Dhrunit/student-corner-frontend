@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import Navbar from '../components/Navbar'
-import login from '../../../assets/login.svg'
+import loginSVG from '../../../assets/login.svg'
+import { login } from '../../../redux/actions/index'
+import { connect } from 'react-redux'
 import './Login.css'
 export class Login extends Component {
 	constructor(props) {
@@ -22,7 +24,7 @@ export class Login extends Component {
 					<div className='row'>
 						<div className='col-md'>
 							<img
-								src={login}
+								src={loginSVG}
 								className='login_svg'
 								alt='login_svg'
 							/>
@@ -65,7 +67,7 @@ export class Login extends Component {
 									<button
 										type='submit'
 										className='button-white'>
-										Sign up
+										Login
 									</button>
 								</div>
 							</form>
@@ -76,5 +78,13 @@ export class Login extends Component {
 		)
 	}
 }
+const mapStateToProps = (state) => ({
+	loggedIn: state.isLoggedIn,
+})
+const mapDispatchToProps = (dispatch) => {
+	return {
+		login: () => dispatch(login()),
+	}
+}
 
-export default Login
+export default connect(mapStateToProps, mapDispatchToProps)(Login)

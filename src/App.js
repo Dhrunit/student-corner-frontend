@@ -4,7 +4,7 @@ import Auth from './pages/notLoggedIn/auth/Auth'
 import AuthTeacher from './pages/notLoggedIn/auth/AuthTeacher'
 import Login from './pages/notLoggedIn/auth/Login'
 
-function App() {
+function App(props) {
 	return (
 		<Switch>
 			<Route path='/' exact component={Home} />
