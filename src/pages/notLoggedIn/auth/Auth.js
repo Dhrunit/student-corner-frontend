@@ -49,6 +49,7 @@ export class Auth extends Component {
 									</label>
 									<input
 										onChange={this.onChange}
+										value={this.state.name}
 										name='name'
 										type='text'
 										class='form-control mb-2'
@@ -66,6 +67,7 @@ export class Auth extends Component {
 										E-mail
 									</label>
 									<input
+										value={this.state.email}
 										onChange={this.onChange}
 										name='email'
 										type='email'
@@ -84,6 +86,7 @@ export class Auth extends Component {
 										Enrollment Number
 									</label>
 									<input
+										value={this.state.enrollmentNo}
 										onChange={this.onChange}
 										name='enrollmentNo'
 										type='text'
@@ -104,6 +107,7 @@ export class Auth extends Component {
 										Division
 									</label>
 									<input
+										value={this.state.division}
 										onChange={this.onChange}
 										name='division'
 										type='text'
@@ -123,6 +127,7 @@ export class Auth extends Component {
 										Sem
 									</label>
 									<input
+										value={this.state.sem}
 										onChange={this.onChange}
 										name='sem'
 										type='number'
@@ -144,6 +149,7 @@ export class Auth extends Component {
 										Roll no
 									</label>
 									<input
+										value={this.state.rollNo}
 										onChange={this.onChange}
 										name='rollNo'
 										type='text'
@@ -163,6 +169,7 @@ export class Auth extends Component {
 									</label>
 									<select
 										onChange={this.onChange}
+										value={this.state.department}
 										name='department'
 										id='department'
 										class='form-control'>
@@ -189,6 +196,7 @@ export class Auth extends Component {
 										Mobile No
 									</label>
 									<input
+										value={this.state.mobileNo}
 										onChange={this.onChange}
 										name='mobileNo'
 										type='text'
@@ -208,6 +216,7 @@ export class Auth extends Component {
 										Password
 									</label>
 									<input
+										value={this.state.password}
 										onChange={this.onChange}
 										name='password'
 										type='password'

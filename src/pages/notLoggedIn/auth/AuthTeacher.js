@@ -14,6 +14,9 @@ export class AuthTeacher extends Component {
 			department: '',
 		}
 	}
+	onChange = (e) => {
+		this.setState({ [e.target.name]: e.target.value })
+	}
 	render() {
 		return (
 			<div>
@@ -40,6 +43,9 @@ export class AuthTeacher extends Component {
 										Full Name
 									</label>
 									<input
+										name='name'
+										onChange={this.onChange}
+										value={this.state.name}
 										type='text'
 										class='form-control mb-2'
 										id='fullName'
@@ -56,6 +62,9 @@ export class AuthTeacher extends Component {
 										E-mail
 									</label>
 									<input
+										name='email'
+										onChange={this.onChange}
+										value={this.state.email}
 										type='email'
 										class='form-control mb-2'
 										id='email'
@@ -72,6 +81,9 @@ export class AuthTeacher extends Component {
 										Employee no
 									</label>
 									<input
+										name='employeeId'
+										onChange={this.onChange}
+										value={this.state.employeeId}
 										type='text'
 										class='form-control'
 										id='empno'
@@ -89,6 +101,9 @@ export class AuthTeacher extends Component {
 										Mobile No
 									</label>
 									<input
+										name='mobileNo'
+										onChange={this.onChange}
+										value={this.state.mobileNo}
 										type='text'
 										class='form-control'
 										id='mobileNo'
@@ -106,6 +121,9 @@ export class AuthTeacher extends Component {
 										Department
 									</label>
 									<select
+										name='department'
+										onChange={this.onChange}
+										value={this.state.department}
 										id='department'
 										class='form-control'>
 										<option selected>
@@ -130,6 +148,9 @@ export class AuthTeacher extends Component {
 										Password
 									</label>
 									<input
+										name='password'
+										onChange={this.onChange}
+										value={this.state.password}
 										type='password'
 										class='form-control'
 										id='password'
