@@ -12,10 +12,13 @@ export class Auth extends Component {
 			enrollmentNo: '',
 			mobileNo: '',
 			department: '',
-			rollno: '',
+			rollNo: '',
 			sem: '',
 			division: '',
 		}
+	}
+	onChange = (e) => {
+		this.setState({ [e.target.name]: e.target.value })
 	}
 	render() {
 		return (
@@ -45,6 +48,8 @@ export class Auth extends Component {
 										Full Name
 									</label>
 									<input
+										onChange={this.onChange}
+										name='name'
 										type='text'
 										class='form-control mb-2'
 										id='fullName'
@@ -61,6 +66,8 @@ export class Auth extends Component {
 										E-mail
 									</label>
 									<input
+										onChange={this.onChange}
+										name='email'
 										type='email'
 										class='form-control mb-2'
 										id='email'
@@ -77,6 +84,8 @@ export class Auth extends Component {
 										Enrollment Number
 									</label>
 									<input
+										onChange={this.onChange}
+										name='enrollmentNo'
 										type='text'
 										class='form-control'
 										id='enrno'
@@ -95,6 +104,8 @@ export class Auth extends Component {
 										Division
 									</label>
 									<input
+										onChange={this.onChange}
+										name='division'
 										type='text'
 										class='form-control'
 										id='div'
@@ -112,6 +123,8 @@ export class Auth extends Component {
 										Sem
 									</label>
 									<input
+										onChange={this.onChange}
+										name='sem'
 										type='number'
 										class='form-control'
 										id='sem'
@@ -131,6 +144,8 @@ export class Auth extends Component {
 										Roll no
 									</label>
 									<input
+										onChange={this.onChange}
+										name='rollNo'
 										type='text'
 										class='form-control mb-2'
 										id='rollno'
@@ -147,6 +162,8 @@ export class Auth extends Component {
 										Department
 									</label>
 									<select
+										onChange={this.onChange}
+										name='department'
 										id='department'
 										class='form-control'>
 										<option selected>
@@ -172,6 +189,8 @@ export class Auth extends Component {
 										Mobile No
 									</label>
 									<input
+										onChange={this.onChange}
+										name='mobileNo'
 										type='text'
 										class='form-control'
 										id='mobileNo'
@@ -189,6 +208,8 @@ export class Auth extends Component {
 										Password
 									</label>
 									<input
+										onChange={this.onChange}
+										name='password'
 										type='password'
 										class='form-control'
 										id='password'
