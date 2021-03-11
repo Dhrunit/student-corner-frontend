@@ -10,10 +10,29 @@ export class Login extends Component {
 		this.state = {
 			email: '',
 			password: '',
+			passwordError: '',
 		}
 	}
 	onChange = (e) => {
 		this.setState({ [e.target.name]: e.target.value })
+	}
+	validate = () => {
+		let passwordError = ''
+		if (this.state.password.length < 7) {
+			passwordError = 'Password should have more than 7 characters'
+		}
+		if (passwordError) {
+			this.setState({ passwordError })
+			return false
+		}
+		return true
+	}
+	handleSubmit = (e) => {
+		e.preventDefault()
+		const isValid = this.validate()
+		if (isValid) {
+			this.props.history.push('/dashboard')
+		}
 	}
 	render() {
 		return (
@@ -30,7 +49,9 @@ export class Login extends Component {
 							/>
 						</div>
 						<div className='col-md alignCenter'>
-							<form className='row g-3'>
+							<form
+								onSubmit={this.handleSubmit}
+								className='row g-3'>
 								<div className='col-md-12'>
 									<label
 										htmlFor='email'
@@ -62,6 +83,7 @@ export class Login extends Component {
 										id='password'
 										placeholder='example: John Doe'
 									/>
+									<div>{this.state.passwordError}</div>
 								</div>
 								<div className='col-12'>
 									<button

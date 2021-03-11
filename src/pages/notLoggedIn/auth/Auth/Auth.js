@@ -7,18 +7,55 @@ export class Auth extends Component {
 		super(props)
 		this.state = {
 			name: '',
+			nameError: '',
 			email: '',
+			emailError: '',
 			password: '',
+			passwordError: '',
 			enrollmentNo: '',
+			enrollmentError: '',
 			mobileNo: '',
+			mobileError: '',
 			department: '',
+			departmentError: '',
 			rollNo: '',
+			rollError: '',
 			sem: '',
+			semError: '',
 			division: '',
+			divisionError: '',
 		}
 	}
 	onChange = (e) => {
 		this.setState({ [e.target.name]: e.target.value })
+	}
+	validate = () => {
+		let divisionError = ''
+		let semError = ''
+		let mobileError = ''
+		let departmentError = ''
+		let enrollmentError = ''
+		let rollError = ''
+		let nameError = ''
+		let passwordError = ''
+		let emailError = ''
+		if (!this.state.email.includes('@')) {
+			emailError = 'invalid email address'
+			console.log(emailError)
+		}
+
+		if (!this.state.name.length < 10) {
+			nameError = 'name error'
+		}
+		if (nameError) {
+			this.setState({ emailError, nameError })
+		}
+		return true
+	}
+	handleSubmit = (e) => {
+		e.preventDefault()
+		const isValid = this.validate()
+		if (isValid) console.log(this.state)
 	}
 	render() {
 		return (
@@ -37,7 +74,9 @@ export class Auth extends Component {
 							to signup/login
 						</p>
 						<div className='blue-container'>
-							<form className='row g-3'>
+							<form
+								onSubmit={this.handleSubmit}
+								className='row g-3'>
 								<div className='col-md-6'>
 									<label
 										htmlFor='fullName'
@@ -55,7 +94,11 @@ export class Auth extends Component {
 										className='form-control mb-2'
 										id='fullName'
 										placeholder='example: John Doe'
+										required
 									/>
+									<div style={{ color: 'red' }}>
+										{this.state.nameError}
+									</div>
 								</div>
 								<div className='col-md-6'>
 									<label
@@ -74,6 +117,7 @@ export class Auth extends Component {
 										className='form-control mb-2'
 										id='email'
 										placeholder='example: test123@gmail.com'
+										required
 									/>
 								</div>
 								<div className='col-md-6'>
@@ -93,6 +137,7 @@ export class Auth extends Component {
 										className='form-control'
 										id='enrno'
 										placeholder='example: 170770107183'
+										required
 									/>
 								</div>
 
@@ -114,6 +159,7 @@ export class Auth extends Component {
 										className='form-control'
 										id='div'
 										placeholder='example: B'
+										required
 									/>
 								</div>
 								<div className='col-md-2'>
@@ -136,6 +182,7 @@ export class Auth extends Component {
 										min='1'
 										max='8'
 										placeholder='example: 5'
+										required
 									/>
 								</div>
 								<div className='col-md-2'>
@@ -156,6 +203,7 @@ export class Auth extends Component {
 										className='form-control mb-2'
 										id='rollno'
 										placeholder='example: 49'
+										required
 									/>
 								</div>
 								<div className='form-group col-md-6'>
@@ -172,7 +220,8 @@ export class Auth extends Component {
 										value={this.state.department}
 										name='department'
 										id='department'
-										className='form-control'>
+										className='form-control'
+										required>
 										<option selected>
 											Choose department
 										</option>
@@ -203,6 +252,7 @@ export class Auth extends Component {
 										className='form-control'
 										id='mobileNo'
 										placeholder='example: 9865741230'
+										required
 									/>
 								</div>
 								<div className='col-md-12'>
@@ -222,6 +272,7 @@ export class Auth extends Component {
 										type='password'
 										className='form-control'
 										id='password'
+										required
 									/>
 								</div>
 								<div className='col-12'>
