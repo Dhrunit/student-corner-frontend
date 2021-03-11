@@ -1,8 +1,8 @@
-import Home from './pages/notLoggedIn/Home'
+import Home from './pages/notLoggedIn/Home/Home'
 import { Route, Switch } from 'react-router-dom'
-import Auth from './pages/notLoggedIn/auth/Auth'
-import AuthTeacher from './pages/notLoggedIn/auth/AuthTeacher'
-import Login from './pages/notLoggedIn/auth/Login'
+import Auth from './pages/notLoggedIn/auth/Auth/Auth'
+import AuthTeacher from './pages/notLoggedIn/auth/AuthTeacher/AuthTeacher'
+import Login from './pages/notLoggedIn/auth/Login/Login'
 
 function App(props) {
 	return (

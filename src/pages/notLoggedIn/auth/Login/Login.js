@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import Navbar from '../components/Navbar'
-import loginSVG from '../../../assets/login.svg'
-import { login } from '../../../redux/actions/index'
+import Navbar from '../../components/Navbar/Navbar'
+import loginSVG from '../../../../assets/login.svg'
+import { login } from '../../../../redux/actions/index'
 import { connect } from 'react-redux'
 import './Login.css'
 export class Login extends Component {

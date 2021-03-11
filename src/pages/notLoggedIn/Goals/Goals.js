@@ -1,7 +1,7 @@
 import React from 'react'
-import digitalCampus from '../../assets/digitalCampus.svg'
-import savesTime from '../../assets/savesTime.svg'
-import openForAll from '../../assets/openForAll.svg'
+import digitalCampus from '../../../assets/digitalCampus.svg'
+import savesTime from '../../../assets/savesTime.svg'
+import openForAll from '../../../assets/openForAll.svg'
 import './Goals.styles.css'
 
 export default function Goals() {

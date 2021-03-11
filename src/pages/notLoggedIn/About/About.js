@@ -1,5 +1,5 @@
 import React from 'react'
-import about from '../../assets/about.svg'
+import about from '../../../assets/about.svg'
 import './About.styles.css'
 
 export default function About() {
