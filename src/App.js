@@ -5,6 +5,7 @@ import Auth from './pages/notLoggedIn/auth/Auth/Auth'
 import AuthTeacher from './pages/notLoggedIn/auth/AuthTeacher/AuthTeacher'
 import Login from './pages/notLoggedIn/auth/Login/Login'
 import Dashboard from './pages/loggedIn/Dashboard/Dashboard'
+import Notes from './pages/loggedIn/Notes/Notes'
 
 function App(props) {
 	return (
@@ -14,6 +15,7 @@ function App(props) {
 			<Route path='/auth/teacher' exact component={AuthTeacher} />
 			<Route path='/login' exact component={Login} />
 			<Route path='/dashboard' exact component={Dashboard} />
+			<Route path='/notes' exact component={Notes} />
 		</Switch>
 	)
 }
