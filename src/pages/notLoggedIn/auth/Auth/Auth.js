@@ -9,7 +9,6 @@ export class Auth extends Component {
 			name: '',
 			nameError: '',
 			email: '',
-			emailError: '',
 			password: '',
 			passwordError: '',
 			enrollmentNo: '',
@@ -17,38 +16,51 @@ export class Auth extends Component {
 			mobileNo: '',
 			mobileError: '',
 			department: '',
-			departmentError: '',
 			rollNo: '',
 			rollError: '',
 			sem: '',
-			semError: '',
 			division: '',
-			divisionError: '',
 		}
 	}
 	onChange = (e) => {
 		this.setState({ [e.target.name]: e.target.value })
 	}
 	validate = () => {
-		let divisionError = ''
-		let semError = ''
 		let mobileError = ''
-		let departmentError = ''
 		let enrollmentError = ''
 		let rollError = ''
 		let nameError = ''
 		let passwordError = ''
-		let emailError = ''
-		if (!this.state.email.includes('@')) {
-			emailError = 'invalid email address'
-			console.log(emailError)
+		if (this.state.mobileNo.length > 10) {
+			mobileError = 'Mobile no should be of 10 characters'
 		}
-
-		if (!this.state.name.length < 10) {
-			nameError = 'name error'
+		if (this.state.rollNo.length > 2) {
+			rollError = 'Roll no should be < 100'
 		}
-		if (nameError) {
-			this.setState({ emailError, nameError })
+		if (this.state.name.length > 30) {
+			nameError = 'Name should be < 30 characters'
+		}
+		if (this.state.enrollmentNo.length > 12) {
+			enrollmentError = 'Invalid enrollment number'
+		}
+		if (this.state.password.length > 20 || this.state.password.length < 5) {
+			passwordError =
+				'Password length should be between 5 and 20 characters'
+		}
+		if (
+			nameError ||
+			rollError ||
+			enrollmentError ||
+			passwordError ||
+			mobileError
+		) {
+			this.setState({
+				rollError,
+				nameError,
+				enrollmentError,
+				passwordError,
+				mobileError,
+			})
 		}
 		return true
 	}
@@ -96,9 +108,6 @@ export class Auth extends Component {
 										placeholder='example: John Doe'
 										required
 									/>
-									<div style={{ color: 'red' }}>
-										{this.state.nameError}
-									</div>
 								</div>
 								<div className='col-md-6'>
 									<label
@@ -139,6 +148,9 @@ export class Auth extends Component {
 										placeholder='example: 170770107183'
 										required
 									/>
+									<div style={{ color: 'red' }}>
+										{this.state.enrollmentError}
+									</div>
 								</div>
 
 								<div className='col-md-2'>
@@ -205,6 +217,9 @@ export class Auth extends Component {
 										placeholder='example: 49'
 										required
 									/>
+									<div style={{ color: 'red' }}>
+										{this.state.rollError}
+									</div>
 								</div>
 								<div className='form-group col-md-6'>
 									<label
@@ -274,6 +289,9 @@ export class Auth extends Component {
 										id='password'
 										required
 									/>
+									<div style={{ color: 'red' }}>
+										{this.state.passwordError}
+									</div>
 								</div>
 								<div className='col-12'>
 									<button
