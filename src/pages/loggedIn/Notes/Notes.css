@@ -1,0 +1,31 @@
+.blue_box {
+	background-color: #111d2c;
+	max-width: 800px;
+	display: block;
+	margin: 2rem auto;
+	display: flex;
+	padding: 2rem;
+	border-radius: 10px;
+	color: #fff;
+	/* margin-left: auto;
+	margin-right: auto; */
+}
+.actionIcons {
+	display: flex;
+	justify-content: flex-end;
+	margin-top: 1.2rem;
+}
+.left_div {
+	text-align: center;
+	margin-right: 1rem;
+	margin-top: 2rem;
+}
+.right_div {
+	margin-top: -1rem;
+	margin-left: 1.2rem;
+	font-weight: 500;
+}
+.vertical_line {
+	border-left: 3px solid white;
+	height: 200px;
+}
