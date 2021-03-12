@@ -31,7 +31,27 @@
 	top: 20px;
 	margin: 1rem -2rem;
 }
-
+.notes_btn {
+	cursor: pointer;
+}
+.btn_notes {
+	position: absolute;
+	color: #000;
+	/* margin-left: -18.5rem; */
+	border-radius: 50px;
+	background: transparent;
+	border: 2px solid #111d2c;
+	padding: 0.7rem 3.5rem;
+	font-size: 1.1rem;
+	left: 1035px;
+	top: 145px;
+	/* margin-top: 1.5rem; */
+	transition: all 0.5s;
+}
+.btn_notes:hover {
+	color: #fff;
+	background: #111d2c;
+}
 ::-webkit-scrollbar-track {
 	background: #f0f0f0;
 	border-radius: 10px;

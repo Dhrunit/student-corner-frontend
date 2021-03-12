@@ -17,7 +17,7 @@ export class Dashboard extends Component {
 		)
 		return (
 			<div>
-				<Slider content={dashboard} />
+				<Slider content={dashboard} dashboard={true} />
 			</div>
 		)
 	}

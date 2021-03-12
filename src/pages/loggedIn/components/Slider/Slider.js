@@ -49,7 +49,7 @@ class Slider extends Component {
 						style={{ fontSize: '1.1rem' }}
 						theme='dark'
 						mode='inline'
-						defaultSelectedKeys={['1']}>
+						defaultSelectedKeys={this.props.notes ? ['2'] : ['1']}>
 						<Menu.Item
 							style={{ position: 'relative' }}
 							key='1'
@@ -60,7 +60,7 @@ class Slider extends Component {
 									}}
 								/>
 							}>
-							Dashboard
+							<Link to='/dashboard'>Dashboard</Link>
 						</Menu.Item>
 						<Menu.Item
 							key='2'
@@ -71,7 +71,7 @@ class Slider extends Component {
 									}}
 								/>
 							}>
-							Notes
+							<Link to='/notes'>Notes</Link>
 						</Menu.Item>
 						<Menu.Item
 							key='3'
@@ -82,7 +82,7 @@ class Slider extends Component {
 									}}
 								/>
 							}>
-							Resources
+							<Link to='/resources'>Resources</Link>
 						</Menu.Item>
 						<Menu.Item
 							key='4'
@@ -93,7 +93,7 @@ class Slider extends Component {
 									}}
 								/>
 							}>
-							Time Table
+							<Link to='/timetable'>Time Table</Link>
 						</Menu.Item>
 						<Menu.Item
 							key='5'
@@ -104,7 +104,7 @@ class Slider extends Component {
 									}}
 								/>
 							}>
-							Discord Server
+							<Link to='/discord'>Discord Server</Link>
 						</Menu.Item>
 						<Menu.Item
 							key='6'
@@ -115,7 +115,7 @@ class Slider extends Component {
 									}}
 								/>
 							}>
-							Profile
+							<Link to='/profile'>Profile</Link>
 						</Menu.Item>
 					</Menu>
 				</Sider>
@@ -149,18 +149,38 @@ class Slider extends Component {
 							padding: 24,
 							minHeight: '100vh',
 						}}>
+						{this.props.notes && (
+							<div className='row'>
+								<div className='col'>
+									<h1
+										className='heading__dashboard'
+										style={{ textAlign: 'center' }}>
+										Notes
+									</h1>
+								</div>
+								{this.props.userType === 'teacher' && (
+									<div className='notes_btn'>
+										<button className='btn_notes'>
+											Add
+										</button>
+									</div>
+								)}
+							</div>
+						)}
 						{this.props.content}
-						<img
-							style={{
-								marginLeft: this.state.collapsed
-									? '27rem'
-									: '22rem',
-								transition: 'all 0.2s',
-							}}
-							src={dashImg}
-							className='dashboard__img'
-							alt='dashboard_img'
-						/>
+						{this.props.dashboard && (
+							<img
+								style={{
+									marginLeft: this.state.collapsed
+										? '27rem'
+										: '22rem',
+									transition: 'all 0.2s',
+								}}
+								src={dashImg}
+								className='dashboard__img'
+								alt='dashboard_img'
+							/>
+						)}
 					</Content>
 				</Layout>
 			</Layout>
