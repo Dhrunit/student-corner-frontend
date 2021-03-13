@@ -19,7 +19,7 @@ function App(props) {
 			<Route path='/dashboard' exact component={Dashboard} />
 			<Route path='/notes' exact component={Notes} />
 			<Route path='/notes/add' exact component={AddNotes} />
-			<Route path='/notes/edit' exact component={EditNotes} />
+			<Route path='/notes/edit/:id' exact component={EditNotes} />
 		</Switch>
 	)
 }

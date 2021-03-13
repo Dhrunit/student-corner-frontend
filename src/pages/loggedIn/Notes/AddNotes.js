@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import Slider from '../components/Slider/Slider'
-import { DatePicker, Space } from 'antd'
+
 import './AddNotes.css'
 export class AddNotes extends Component {
 	constructor(props) {

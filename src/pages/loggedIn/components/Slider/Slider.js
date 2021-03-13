@@ -49,7 +49,13 @@ class Slider extends Component {
 						style={{ fontSize: '1.1rem' }}
 						theme='dark'
 						mode='inline'
-						defaultSelectedKeys={this.props.notes ? ['2'] : ['1']}>
+						defaultSelectedKeys={
+							this.props.notes ||
+							this.props.addNotes ||
+							this.props.editNotes
+								? ['2']
+								: ['1']
+						}>
 						<Menu.Item
 							style={{ position: 'relative' }}
 							key='1'
@@ -160,9 +166,11 @@ class Slider extends Component {
 								</div>
 								{this.props.userType === 'teacher' && (
 									<div className='notes_btn'>
-										<button className='btn_notes'>
-											Add
-										</button>
+										<Link to='notes/add'>
+											<button className='btn_notes'>
+												Add
+											</button>
+										</Link>
 									</div>
 								)}
 							</div>
@@ -177,6 +185,20 @@ class Slider extends Component {
 											marginTop: '-1rem',
 										}}>
 										Add Notes
+									</h1>
+								</div>
+							</div>
+						)}
+						{this.props.editNotes && (
+							<div className='row'>
+								<div className='col'>
+									<h1
+										className='heading__dashboard'
+										style={{
+											textAlign: 'center',
+											marginTop: '-1rem',
+										}}>
+										Edit Notes
 									</h1>
 								</div>
 							</div>

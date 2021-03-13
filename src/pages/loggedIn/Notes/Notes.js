@@ -1,6 +1,8 @@
 import { DeleteFilled, EditFilled } from '@ant-design/icons'
 import React, { Component } from 'react'
+import { Popconfirm, message, Button } from 'antd'
 import { connect } from 'react-redux'
+import { Link } from 'react-router-dom'
 import Slider from '../components/Slider/Slider'
 import './Notes.css'
 export class Notes extends Component {
@@ -35,7 +37,11 @@ export class Notes extends Component {
 			],
 		}
 	}
+	confirm() {
+		message.info('Note deleted')
+	}
 	render() {
+		const text = 'Are you sure to delete this Note?'
 		let notes = this.state.notes.map((note) => (
 			<div className='blue_box' key={note.key}>
 				<div className='left_div'>
@@ -47,13 +53,28 @@ export class Notes extends Component {
 				<div className='vertical_line'></div>
 				<div className='right_div'>
 					<div className='actionIcons'>
-						<EditFilled
-							style={{
-								fontSize: '1.2rem',
-								marginRight: '0.8rem',
-							}}
-						/>
-						<DeleteFilled style={{ fontSize: '1.2rem' }} />
+						<Link to={`notes/edit/${note.key}`}>
+							<EditFilled
+								style={{
+									color: '#fff',
+									fontSize: '1.2rem',
+									marginRight: '0.8rem',
+								}}
+							/>
+						</Link>
+						<Popconfirm
+							placement='rightBottom'
+							title={text}
+							onConfirm={this.confirm}
+							okText='Yes'
+							cancelText='No'>
+							<DeleteFilled
+								style={{
+									fontSize: '1.2rem',
+									marginTop: '0.28rem',
+								}}
+							/>
+						</Popconfirm>
 					</div>
 					<p
 						style={{
