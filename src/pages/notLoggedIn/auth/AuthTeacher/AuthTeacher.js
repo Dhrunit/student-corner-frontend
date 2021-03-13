@@ -7,15 +7,52 @@ export class AuthTeacher extends Component {
 		super(props)
 		this.state = {
 			name: '',
+			nameError: '',
 			email: '',
 			password: '',
+			passwordError: '',
 			employeeId: '',
+			employeeIdError: '',
 			mobileNo: '',
+			mobileError: '',
 			department: '',
 		}
 	}
 	onChange = (e) => {
 		this.setState({ [e.target.name]: e.target.value })
+	}
+	validate = () => {
+		let mobileError = ''
+		let employeeIdError = ''
+		let nameError = ''
+		let passwordError = ''
+		if (this.state.mobileNo.length > 10) {
+			mobileError = 'Mobile no should be of 10 characters'
+		}
+		if (this.state.name.length > 30) {
+			nameError = 'Name should be < 30 characters'
+		}
+		if (this.state.employeeId.length > 12) {
+			employeeIdError = 'Invalid enrollment number'
+		}
+		if (this.state.password.length > 20 || this.state.password.length < 5) {
+			passwordError =
+				'Password length should be between 5 and 20 characters'
+		}
+		if (nameError || employeeIdError || passwordError || mobileError) {
+			this.setState({
+				nameError,
+				employeeIdError,
+				passwordError,
+				mobileError,
+			})
+		}
+		return true
+	}
+	handleSubmit = (e) => {
+		e.preventDefault()
+		const isValid = this.validate()
+		if (isValid) console.log(this.state)
 	}
 	render() {
 		return (
@@ -32,7 +69,9 @@ export class AuthTeacher extends Component {
 							to signup/login
 						</p>
 						<div className='blue-container'>
-							<form className='row g-3'>
+							<form
+								onSubmit={this.handleSubmit}
+								className='row g-3'>
 								<div className='col-md-6'>
 									<label
 										htmlFor='fullName'
@@ -49,8 +88,12 @@ export class AuthTeacher extends Component {
 										type='text'
 										className='form-control mb-2'
 										id='fullName'
-										placeholder='example: John Doe'
+										placeholder='eg: John Doe'
+										required
 									/>
+									<div style={{ color: 'red' }}>
+										{this.state.nameError}
+									</div>
 								</div>
 								<div className='col-md-6'>
 									<label
@@ -68,7 +111,8 @@ export class AuthTeacher extends Component {
 										type='email'
 										className='form-control mb-2'
 										id='email'
-										placeholder='example: test123@gmail.com'
+										placeholder='eg: test123@gmail.com'
+										required
 									/>
 								</div>
 								<div className='col-md-6'>
@@ -87,8 +131,12 @@ export class AuthTeacher extends Component {
 										type='text'
 										className='form-control'
 										id='empno'
-										placeholder='example: 17077'
+										placeholder='eg: 170770107183'
+										required
 									/>
+									<div style={{ color: 'red' }}>
+										{this.state.employeeIdError}
+									</div>
 								</div>
 								<div className='col-md-6'>
 									<label
@@ -107,8 +155,12 @@ export class AuthTeacher extends Component {
 										type='text'
 										className='form-control'
 										id='mobileNo'
-										placeholder='example: 9865741230'
+										placeholder='eg: 9865741230'
+										required
 									/>
+									<div style={{ color: 'red' }}>
+										{this.state.mobileError}
+									</div>
 								</div>
 
 								<div className='form-group col-md-6'>
@@ -125,7 +177,8 @@ export class AuthTeacher extends Component {
 										onChange={this.onChange}
 										value={this.state.department}
 										id='department'
-										className='form-control'>
+										className='form-control'
+										required>
 										<option selected>
 											Choose department
 										</option>
@@ -154,7 +207,11 @@ export class AuthTeacher extends Component {
 										type='password'
 										class='form-control'
 										id='password'
+										required
 									/>
+									<div style={{ color: 'red' }}>
+										{this.state.passwordError}
+									</div>
 								</div>
 
 								<div class='col-12'>

@@ -105,9 +105,12 @@ export class Auth extends Component {
 										type='text'
 										className='form-control mb-2'
 										id='fullName'
-										placeholder='example: John Doe'
+										placeholder='eg: John Doe'
 										required
 									/>
+									<div style={{ color: 'red' }}>
+										{this.state.nameError}
+									</div>
 								</div>
 								<div className='col-md-6'>
 									<label
@@ -125,7 +128,7 @@ export class Auth extends Component {
 										type='email'
 										className='form-control mb-2'
 										id='email'
-										placeholder='example: test123@gmail.com'
+										placeholder='eg: test123@gmail.com'
 										required
 									/>
 								</div>
@@ -145,7 +148,7 @@ export class Auth extends Component {
 										type='text'
 										className='form-control'
 										id='enrno'
-										placeholder='example: 170770107183'
+										placeholder='eg: 170770107183'
 										required
 									/>
 									<div style={{ color: 'red' }}>
@@ -170,7 +173,7 @@ export class Auth extends Component {
 										type='text'
 										className='form-control'
 										id='div'
-										placeholder='example: B'
+										placeholder='eg: B'
 										required
 									/>
 								</div>
@@ -193,7 +196,7 @@ export class Auth extends Component {
 										id='sem'
 										min='1'
 										max='8'
-										placeholder='example: 5'
+										placeholder='eg: 5'
 										required
 									/>
 								</div>
@@ -214,7 +217,7 @@ export class Auth extends Component {
 										type='text'
 										className='form-control mb-2'
 										id='rollno'
-										placeholder='example: 49'
+										placeholder='eg: 49'
 										required
 									/>
 									<div style={{ color: 'red' }}>
@@ -266,7 +269,7 @@ export class Auth extends Component {
 										type='text'
 										className='form-control'
 										id='mobileNo'
-										placeholder='example: 9865741230'
+										placeholder='eg: 9865741230'
 										required
 									/>
 								</div>
