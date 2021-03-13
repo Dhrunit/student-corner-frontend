@@ -1,6 +1,6 @@
 import { DeleteFilled, EditFilled } from '@ant-design/icons'
 import React, { Component } from 'react'
-import { Popconfirm, message, Button } from 'antd'
+import { Popconfirm, message } from 'antd'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 import Slider from '../components/Slider/Slider'
