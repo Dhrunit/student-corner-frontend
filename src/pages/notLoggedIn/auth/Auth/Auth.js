@@ -240,9 +240,6 @@ export class Auth extends Component {
 										id='department'
 										className='form-control'
 										required>
-										<option selected>
-											Choose department
-										</option>
 										<option>Computer</option>
 										<option>Electrical</option>
 										<option>Mechanical</option>

@@ -1,0 +1,19 @@
+.blue_box_add_notes {
+	background-color: #111d2c;
+	max-width: 800px;
+	display: block;
+	margin: 0rem auto;
+	display: flex;
+	padding: 2rem;
+	border-radius: 10px;
+}
+.blue_box_add_notes h4 {
+	color: #fff;
+	margin-right: 1rem;
+}
+.flex_container {
+	display: flex;
+}
+.block {
+	display: block;
+}

@@ -167,6 +167,20 @@ class Slider extends Component {
 								)}
 							</div>
 						)}
+						{this.props.addNotes && (
+							<div className='row'>
+								<div className='col'>
+									<h1
+										className='heading__dashboard'
+										style={{
+											textAlign: 'center',
+											marginTop: '-1rem',
+										}}>
+										Add Notes
+									</h1>
+								</div>
+							</div>
+						)}
 						{this.props.content}
 						{this.props.dashboard && (
 							<img
