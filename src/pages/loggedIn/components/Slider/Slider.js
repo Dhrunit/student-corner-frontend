@@ -50,10 +50,15 @@ class Slider extends Component {
 						theme='dark'
 						mode='inline'
 						defaultSelectedKeys={
-							this.props.notes ||
-							this.props.addNotes ||
-							this.props.editNotes
+							this.props.timeTable
+								? ['4']
+								: ['1'] ||
+								  this.props.notes ||
+								  this.props.addNotes ||
+								  this.props.editNotes
 								? ['2']
+								: ['1'] || this.props.discord
+								? ['5']
 								: ['1']
 						}>
 						<Menu.Item
@@ -110,18 +115,9 @@ class Slider extends Component {
 									}}
 								/>
 							}>
-							<Link to='/discord'>Discord Server</Link>
-						</Menu.Item>
-						<Menu.Item
-							key='6'
-							icon={
-								<TeamOutlined
-									style={{
-										fontSize: '1.3rem',
-									}}
-								/>
-							}>
-							<Link to='/profile'>Profile</Link>
+							<a target='_blank' href='https://discord.com/'>
+								Discord Server
+							</a>
 						</Menu.Item>
 					</Menu>
 				</Sider>

@@ -8,6 +8,7 @@ import Dashboard from './pages/loggedIn/Dashboard/Dashboard'
 import Notes from './pages/loggedIn/Notes/Notes'
 import AddNotes from './pages/loggedIn/Notes/AddNotes'
 import EditNotes from './pages/loggedIn/Notes/EditNotes'
+import TimeTable from './pages/loggedIn/TimeTable/TimeTable'
 
 function App(props) {
 	return (
@@ -20,6 +21,7 @@ function App(props) {
 			<Route path='/notes' exact component={Notes} />
 			<Route path='/notes/add' exact component={AddNotes} />
 			<Route path='/notes/edit/:id' exact component={EditNotes} />
+			<Route path='/timetable' exact component={TimeTable} />
 		</Switch>
 	)
 }
