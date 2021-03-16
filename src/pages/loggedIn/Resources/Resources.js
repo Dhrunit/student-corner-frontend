@@ -37,7 +37,7 @@ export class Resources extends Component {
 								minima ea culpa veniam? Amet, deserunt nisi
 								laborum quam, accusamus delectus corporis,
 								voluptatem ratione doloremque sapiente nihil
-								corrupti.
+								corrupti
 							</p>
 						</div>
 					</div>
