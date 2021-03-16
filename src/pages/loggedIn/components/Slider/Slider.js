@@ -49,18 +49,7 @@ class Slider extends Component {
 						style={{ fontSize: '1.1rem' }}
 						theme='dark'
 						mode='inline'
-						defaultSelectedKeys={
-							this.props.timeTable
-								? ['4']
-								: ['1'] ||
-								  this.props.notes ||
-								  this.props.addNotes ||
-								  this.props.editNotes
-								? ['2']
-								: ['1'] || this.props.discord
-								? ['5']
-								: ['1']
-						}>
+						defaultSelectedKeys={0}>
 						<Menu.Item
 							style={{ position: 'relative' }}
 							key='1'

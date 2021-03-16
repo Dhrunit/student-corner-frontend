@@ -15,11 +15,7 @@ export class TimeTable extends Component {
 		)
 		return (
 			<div>
-				<Slider
-					content={content}
-					timeTable={true}
-					userType={this.props.userType}
-				/>
+				<Slider content={content} />
 			</div>
 		)
 	}
