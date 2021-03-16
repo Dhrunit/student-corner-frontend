@@ -16,7 +16,9 @@ export default function Goals() {
 						</div>
 						<div className='col'>
 							<div className='goals_heading'>
-								<h1>Open for all</h1>
+								<h1 style={{ textAlign: 'center' }}>
+									Open for all
+								</h1>
 							</div>
 							<p className='goals_subtitle'>
 								Lorem ipsum dolor sit amet, consectetur
@@ -32,7 +34,9 @@ export default function Goals() {
 					<div className='row'>
 						<div className='col'>
 							<div className='goals_heading'>
-								<h1>Saves Time</h1>
+								<h1 style={{ textAlign: 'center' }}>
+									Saves Time
+								</h1>
 							</div>
 							<p className='goals_subtitle'>
 								Lorem ipsum dolor sit amet, consectetur
@@ -50,7 +54,9 @@ export default function Goals() {
 						</div>
 						<div className='col'>
 							<div className='goals_heading'>
-								<h1>Digital Campus</h1>
+								<h1 style={{ textAlign: 'center' }}>
+									Digital Campus
+								</h1>
 							</div>
 							<p className='goals_subtitle'>
 								Lorem ipsum dolor sit amet, consectetur

@@ -35,15 +35,17 @@ class Slider extends Component {
 					collapsible
 					collapsed={this.state.collapsed}>
 					<div>
-						<h1
-							className='logo'
-							style={{
-								visibility: this.state.collapsed
-									? 'hidden'
-									: 'visible',
-							}}>
-							SC
-						</h1>
+						<Link to='/dashboard'>
+							<h1
+								className='logo'
+								style={{
+									visibility: this.state.collapsed
+										? 'hidden'
+										: 'visible',
+								}}>
+								SC
+							</h1>
+						</Link>
 					</div>
 					<Menu
 						style={{ fontSize: '1.1rem' }}

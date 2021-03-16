@@ -21,7 +21,7 @@ export class Home extends Component {
 							Lorem Ipsum is simply dummy text of the printing and
 							typesetting industry.
 						</p>
-						<Link className='btn-blue' to='/signup'>
+						<Link className='btn-blue' to='/auth'>
 							Get Started
 						</Link>
 					</div>
