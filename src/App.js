@@ -10,6 +10,8 @@ import AddNotes from './pages/loggedIn/Notes/AddNotes'
 import EditNotes from './pages/loggedIn/Notes/EditNotes'
 import TimeTable from './pages/loggedIn/TimeTable/TimeTable'
 import Resources from './pages/loggedIn/Resources/Resources'
+import Blogs from './pages/loggedIn/Resources/Blogs/Blogs'
+import Youtube from './pages/loggedIn/Resources/Youtube/Youtube'
 
 function App(props) {
 	return (
@@ -24,6 +26,8 @@ function App(props) {
 			<Route path='/notes/edit/:id' exact component={EditNotes} />
 			<Route path='/timetable' exact component={TimeTable} />
 			<Route path='/resources' exact component={Resources} />
+			<Route path='/resources/blogs' exact component={Blogs} />
+			<Route path='/resources/youtube' exact component={Youtube} />
 		</Switch>
 	)
 }
