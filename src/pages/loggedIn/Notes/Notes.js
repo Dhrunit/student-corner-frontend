@@ -58,7 +58,8 @@ export class Notes extends Component {
 								style={{
 									color: '#fff',
 									fontSize: '1.2rem',
-									marginLeft: '35rem',
+									marginLeft: '32rem',
+									marginRight: '1rem',
 								}}
 							/>
 						</Link>

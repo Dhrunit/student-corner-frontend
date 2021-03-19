@@ -5,28 +5,22 @@ export class Youtube extends Component {
 	constructor(props) {
 		super(props)
 		this.state = {
-			resources: [
+			resources: [],
+		}
+	}
+	async componentDidMount() {
+		try {
+			const response = await fetch(
+				'http://localhost:5000/api/resources/youtube',
 				{
-					id: '1',
-					url: 'https://www.youtube.com/embed/ltvwVhqdsn4',
-					subject: 'AI',
-				},
-				{
-					id: '2',
-					url: 'https://www.youtube.com/embed/JjL0FU7w1c4',
-					subject: 'AI',
-				},
-				{
-					id: '3',
-					url: 'https://www.youtube.com/embed/AQGd7ebpODs',
-					subject: 'AI',
-				},
-				{
-					id: '4',
-					url: 'https://www.youtube.com/embed/1tnrUJLcz2g',
-					subject: 'AI',
-				},
-			],
+					method: 'GET',
+					headers: { 'Content-Type': 'application/json' },
+				}
+			)
+			const responseData = await response.json()
+			this.setState({ resources: responseData.resources })
+		} catch (err) {
+			alert(err)
 		}
 	}
 	render() {

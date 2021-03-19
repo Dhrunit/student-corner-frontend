@@ -7,7 +7,10 @@ export class TimeTable extends Component {
 			<div className='text-center'>
 				<h1 className='timeTable-title'>TimeTable</h1>
 				<div className='blue_box'>
-					<a href='#'>
+					<a
+						target='_blank'
+						rel='noreferrer'
+						href='https://dhrunit-portfolio.s3.ap-south-1.amazonaws.com/Class+TT+8th+sem+A-501.pdf'>
 						<h5>Click here to download time table</h5>
 					</a>
 				</div>

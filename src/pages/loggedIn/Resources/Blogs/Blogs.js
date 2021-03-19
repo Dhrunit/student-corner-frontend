@@ -5,32 +5,22 @@ export class Blogs extends Component {
 	constructor(props) {
 		super(props)
 		this.state = {
-			resources: [
+			resources: [],
+		}
+	}
+	async componentDidMount() {
+		try {
+			const response = await fetch(
+				'http://localhost:5000/api/resources/blog',
 				{
-					id: '1',
-					topic: 'Lorem',
-					link: 'https://www.geeksforgeeks.org/',
-					subject: 'AI',
-				},
-				{
-					id: '2',
-					topic: 'Lorem',
-					link: 'https://www.geeksforgeeks.org/',
-					subject: 'AI',
-				},
-				{
-					id: '3',
-					topic: 'Lorem',
-					link: 'https://www.geeksforgeeks.org/',
-					subject: 'AI',
-				},
-				{
-					id: '4',
-					topic: 'Lorem',
-					link: 'https://www.geeksforgeeks.org/',
-					subject: 'AI',
-				},
-			],
+					method: 'GET',
+					headers: { 'Content-Type': 'application/json' },
+				}
+			)
+			const responseData = await response.json()
+			this.setState({ resources: responseData.resources })
+		} catch (err) {
+			alert(err)
 		}
 	}
 	render() {
@@ -39,7 +29,7 @@ export class Blogs extends Component {
 				<h1 className='timeTable-title'>Blogs</h1>
 				{this.state.resources.map((resource) => (
 					<div className='blue_box'>
-						<a href={resource.link}>
+						<a target='_blank' rel='noreferrer' href={resource.url}>
 							<div className='row container'>
 								<div className='col'>
 									<h2 style={{ color: '#fff' }}>Topic</h2>
