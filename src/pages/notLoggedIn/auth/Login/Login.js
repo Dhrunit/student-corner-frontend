@@ -18,7 +18,7 @@ export class Login extends Component {
 	}
 	validate = () => {
 		let passwordError = ''
-		if (this.state.password.length < 7) {
+		if (this.state.password.length < 5) {
 			passwordError = 'Password should have more than 7 characters'
 		}
 		if (passwordError) {
@@ -45,7 +45,7 @@ export class Login extends Component {
 				)
 				const responseData = await response.json()
 				if (responseData.message === 'loggedin') {
-					this.props.login()
+					this.props.login(responseData.user)
 					this.props.history.push('/dashboard')
 				} else {
 					alert('Invalid credentials')
@@ -126,7 +126,7 @@ const mapStateToProps = (state) => ({
 })
 const mapDispatchToProps = (dispatch) => {
 	return {
-		login: () => dispatch(login()),
+		login: (data) => dispatch(login(data)),
 	}
 }
 
