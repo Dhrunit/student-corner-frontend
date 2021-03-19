@@ -1,19 +1,41 @@
 import React, { Component } from 'react'
 import Slider from '../components/Slider/Slider'
-
+import { message } from 'antd'
 import './AddNotes.css'
 export class AddNotes extends Component {
 	constructor(props) {
 		super(props)
 		this.state = {
-			subject: '',
-			time: '',
+			subject: 'AI',
+			time: '9:00 - 9:50 AM',
 			date: '',
 			description: '',
 		}
 	}
 	onChange = (e) => {
 		this.setState({ [e.target.name]: e.target.value })
+	}
+	handleSubmit = async (e) => {
+		e.preventDefault()
+		try {
+			const response = await fetch('http://localhost:5000/api/notes', {
+				method: 'POST',
+				headers: { 'Content-Type': 'application/json' },
+				body: JSON.stringify({
+					subject: this.state.subject,
+					time: this.state.time,
+					date: this.state.date,
+					description: this.state.description,
+					creator: JSON.parse(localStorage.getItem('user')).fullName,
+				}),
+			})
+			const responseData = await response.json()
+			if (responseData.note) {
+				await message.success('Note Added Successfully')
+			}
+		} catch (err) {
+			alert(err)
+		}
 	}
 
 	render() {
@@ -89,9 +111,9 @@ export class AddNotes extends Component {
 							}}>
 							<h4>Description:</h4>
 						</label>
-						<div class='form-floating'>
+						<div className='form-floating'>
 							<textarea
-								class='form-control'
+								className='form-control'
 								placeholder='Leave description here'
 								id='description'
 								name='description'

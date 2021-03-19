@@ -44,6 +44,11 @@ export class Login extends Component {
 					}
 				)
 				const responseData = await response.json()
+				if (responseData.user.student === 'true') {
+					localStorage.setItem('userType', 'student')
+				} else {
+					localStorage.setItem('userType', 'teacher')
+				}
 				if (responseData.message === 'loggedin') {
 					this.props.login(responseData.user)
 					this.props.history.push('/dashboard')

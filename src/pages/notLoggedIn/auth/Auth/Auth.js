@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
+import { message } from 'antd'
 import { studentLogin } from '../../../../redux/actions/index'
 import Navbar from '../../components/Navbar/Navbar'
 import './Auth.css'
@@ -103,7 +104,7 @@ export class Auth extends Component {
 				)
 				const responseData = await response.json()
 				if (responseData.user) {
-					alert('Signup Successful')
+					await message.success('Signup Successful')
 					this.props.studentLogin()
 					this.props.history.push('/login')
 				}

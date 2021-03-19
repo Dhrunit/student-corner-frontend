@@ -9,41 +9,41 @@ export class Notes extends Component {
 	constructor(props) {
 		super(props)
 		this.state = {
-			notes: [
-				{
-					key: '1',
-					subject: 'AI',
-					date: '21/3/21',
-					description:
-						'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusamus, praesentium.',
-					time: '9:00-9:50 AM',
-				},
-				{
-					key: '2',
-					subject: 'AI',
-					date: '21/3/21',
-					description:
-						'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusamus, praesentium.',
-					time: '9:00-9:50 AM',
-				},
-				{
-					key: '3',
-					subject: 'AI',
-					date: '21/3/21',
-					description:
-						'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusamus, praesentium.',
-					time: '9:00-9:50 AM',
-				},
-			],
+			notes: [],
 		}
 	}
-	confirm() {
-		message.info('Note deleted')
+	async componentDidMount() {
+		try {
+			const response = await fetch('http://localhost:5000/api/notes', {
+				method: 'GET',
+				headers: { 'Content-Type': 'application/json' },
+			})
+			const responseData = await response.json()
+			this.setState({ notes: responseData.notes })
+		} catch (err) {
+			alert(err)
+		}
+	}
+	async confirm(id) {
+		try {
+			const response = await fetch(
+				`http://localhost:5000/api/notes/${id}`,
+				{
+					method: 'DELETE',
+					headers: { 'Content-Type': 'application/json' },
+				}
+			)
+			const responseData = await response.json()
+			await message.success(responseData.message)
+			window.location.reload()
+		} catch (err) {
+			alert(err)
+		}
 	}
 	render() {
 		const text = 'Are you sure to delete this Note?'
 		let notes = this.state.notes.map((note) => (
-			<div className='blue_box' key={note.key}>
+			<div className='blue_box' key={note.id}>
 				<div className='left_div'>
 					<h1 style={{ color: '#fff', fontWeight: '800' }}>
 						{note.subject}
@@ -53,7 +53,7 @@ export class Notes extends Component {
 				<div className='vertical_line'></div>
 				<div className='right_div'>
 					<div className='actionIcons'>
-						<Link to={`notes/edit/${note.key}`}>
+						<Link to={`notes/edit/${note.id}`}>
 							<EditFilled
 								style={{
 									color: '#fff',
@@ -65,7 +65,7 @@ export class Notes extends Component {
 						<Popconfirm
 							placement='rightBottom'
 							title={text}
-							onConfirm={this.confirm}
+							onConfirm={() => this.confirm(note.id)}
 							okText='Yes'
 							cancelText='No'>
 							<DeleteFilled

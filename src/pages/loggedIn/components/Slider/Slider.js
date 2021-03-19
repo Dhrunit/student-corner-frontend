@@ -158,7 +158,8 @@ class Slider extends Component {
 										Notes
 									</h1>
 								</div>
-								{this.props.userType === 'teacher' && (
+								{localStorage.getItem('userType') ===
+									'teacher' && (
 									<div className='notes_btn'>
 										<Link to='notes/add'>
 											<button className='btn_notes'>

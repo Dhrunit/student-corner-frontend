@@ -1,18 +1,85 @@
 import React, { Component } from 'react'
 import Slider from '../components/Slider/Slider'
+import { message } from 'antd'
 import './EditNotes.css'
 export class EditNotes extends Component {
 	constructor(props) {
 		super(props)
 		this.state = {
-			subject: '',
-			time: '',
-			date: '',
-			description: '',
+			note: {
+				subject: 'AI',
+				time: '9:00 - 9:50 AM',
+				date: '',
+				description: '',
+			},
 		}
 	}
-	onChange = (e) => {
-		this.setState({ [e.target.name]: e.target.value })
+
+	async componentDidMount() {
+		var url = window.location.pathname
+		var id = url.substring(url.lastIndexOf('/') + 1)
+		try {
+			const response = await fetch(
+				`http://localhost:5000/api/notes/${id}`,
+				{
+					method: 'GET',
+					headers: { 'Content-Type': 'application/json' },
+				}
+			)
+			const responseData = await response.json()
+			this.setState({ note: responseData.note })
+		} catch (err) {
+			alert(err)
+		}
+	}
+	handleSubmit = async (e) => {
+		e.preventDefault()
+		var url = window.location.pathname
+		var id = url.substring(url.lastIndexOf('/') + 1)
+		try {
+			const response = await fetch(
+				`http://localhost:5000/api/notes/${id}`,
+				{
+					method: 'PATCH',
+					headers: { 'Content-Type': 'application/json' },
+					body: JSON.stringify({
+						subject: this.state.note.subject,
+						time: this.state.note.time,
+						date: this.state.note.date,
+						description: this.state.note.description,
+						creator: JSON.parse(localStorage.getItem('user'))
+							.fullName,
+					}),
+				}
+			)
+			const responseData = await response.json()
+			if (responseData.note) {
+				await message.success('Note Edited Successfully')
+				this.props.history.push('/notes')
+			}
+		} catch (err) {
+			alert(err)
+		}
+	}
+	onDateChange = (e) => {
+		this.setState((prevState) => ({
+			note: { ...prevState.note, date: e.target.value },
+		}))
+	}
+	onTimeChange = (e) => {
+		this.setState((prevState) => ({
+			note: { ...prevState.note, time: e.target.value },
+		}))
+	}
+	onDescriptionChange = (e) => {
+		this.setState((prevState) => ({
+			note: { ...prevState.note, description: e.target.value },
+		}))
+	}
+	onSubjectChange = (e) => {
+		this.setState((prevState) => ({
+			note: { ...prevState.note, subject: e.target.value },
+		}))
 	}
 
 	render() {
@@ -28,8 +95,8 @@ export class EditNotes extends Component {
 							<h4>Subject:</h4>
 						</label>
 						<select
-							onChange={this.onChange}
-							value={this.state.subject}
+							onChange={this.onSubjectChange}
+							value={this.state.note.subject}
 							name='subject'
 							className='form-control'
 							required>
@@ -48,8 +115,8 @@ export class EditNotes extends Component {
 							<h4>Time:</h4>
 						</label>
 						<select
-							onChange={this.onChange}
-							value={this.state.time}
+							onChange={this.onTimeChange}
+							value={this.state.note.time}
 							name='time'
 							className='form-control'
 							required>
@@ -72,8 +139,9 @@ export class EditNotes extends Component {
 						</label>
 						<input
 							type='date'
+							value={this.state.note.date}
 							name='date'
-							onChange={this.onChange}
+							onChange={this.onDateChange}
 							style={{ width: '640px', borderRadius: '10px' }}
 							required
 						/>
@@ -94,7 +162,8 @@ export class EditNotes extends Component {
 								placeholder='Leave description here'
 								id='description'
 								name='description'
-								onChange={this.onChange}
+								value={this.state.note.description}
+								onChange={this.onDescriptionChange}
 								required
 								style={{
 									height: '50px',
