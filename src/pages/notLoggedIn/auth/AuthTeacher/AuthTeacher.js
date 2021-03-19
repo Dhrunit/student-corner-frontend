@@ -33,7 +33,7 @@ export class AuthTeacher extends Component {
 			nameError = 'Name should be < 30 characters'
 		}
 		if (this.state.employeeId.length > 12) {
-			employeeIdError = 'Invalid enrollment number'
+			employeeIdError = 'Invalid employee Id'
 		}
 		if (this.state.password.length > 20 || this.state.password.length < 5) {
 			passwordError =
