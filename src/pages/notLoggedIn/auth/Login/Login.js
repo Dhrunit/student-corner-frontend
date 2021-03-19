@@ -27,11 +27,31 @@ export class Login extends Component {
 		}
 		return true
 	}
-	handleSubmit = (e) => {
+	handleSubmit = async (e) => {
 		e.preventDefault()
 		const isValid = this.validate()
 		if (isValid) {
-			this.props.history.push('/dashboard')
+			try {
+				const response = await fetch(
+					'http://localhost:5000/api/users/login',
+					{
+						method: 'POST',
+						headers: { 'Content-Type': 'application/json' },
+						body: JSON.stringify({
+							email: this.state.email,
+							password: this.state.password,
+						}),
+					}
+				)
+				const responseData = await response.json()
+				if (responseData.message === 'loggedin') {
+					this.props.history.push('/dashboard')
+				} else {
+					alert('Invalid credentials')
+				}
+			} catch (err) {
+				alert(err)
+			}
 		}
 	}
 	render() {
