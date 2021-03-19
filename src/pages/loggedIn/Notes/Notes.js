@@ -52,7 +52,14 @@ export class Notes extends Component {
 				</div>
 				<div className='vertical_line'></div>
 				<div className='right_div'>
-					<div className='actionIcons'>
+					<div
+						className='actionIcons'
+						style={{
+							visibility:
+								localStorage.getItem('userType') === 'teacher'
+									? 'visible'
+									: 'hidden',
+						}}>
 						<Link to={`notes/edit/${note.id}`}>
 							<EditFilled
 								style={{
@@ -77,6 +84,7 @@ export class Notes extends Component {
 							/>
 						</Popconfirm>
 					</div>
+
 					<p
 						style={{
 							fontSize: '1.4rem',
