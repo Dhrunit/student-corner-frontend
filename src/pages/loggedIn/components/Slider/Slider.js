@@ -1,5 +1,7 @@
 import { Layout, Menu } from 'antd'
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import { logout } from '../../../../redux/actions/index'
 import dashImg from '../../../../assets/Allura - Giant Phone.png'
 import {
 	LeftCircleOutlined,
@@ -9,7 +11,6 @@ import {
 	CheckSquareOutlined,
 	InsertRowAboveOutlined,
 	SlackOutlined,
-	TeamOutlined,
 	LogoutOutlined,
 } from '@ant-design/icons'
 import './Slider.css'
@@ -17,8 +18,9 @@ import { Link } from 'react-router-dom'
 const { Header, Sider, Content } = Layout
 
 class Slider extends Component {
-	state = {
-		collapsed: false,
+	constructor(props) {
+		super(props)
+		this.state = { collapsed: false }
 	}
 
 	toggle = () => {
@@ -106,7 +108,10 @@ class Slider extends Component {
 									}}
 								/>
 							}>
-							<a target='_blank' href='https://discord.com/'>
+							<a
+								target='_blank'
+								rel='noreferrer'
+								href='https://discord.com/'>
 								Discord Server
 							</a>
 						</Menu.Item>
@@ -132,7 +137,9 @@ class Slider extends Component {
 									marginTop: '1.2rem',
 								}}
 							/>
-							<Link to='/'>Logout</Link>
+							<Link onClick={this.props.logout} to='/'>
+								Logout
+							</Link>
 						</div>
 					</Header>
 					<Content
@@ -210,5 +217,10 @@ class Slider extends Component {
 		)
 	}
 }
+const mapDispatchToProps = (dispatch) => {
+	return {
+		logout: () => dispatch(logout()),
+	}
+}
 
-export default Slider
+export default connect(null, mapDispatchToProps)(Slider)

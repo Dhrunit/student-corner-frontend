@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
+import { connect } from 'react-redux'
+import { TeacherLogin } from '../../../../redux/actions/index'
 import Navbar from '../../components/Navbar/Navbar'
 import './AuthTeacher.css'
 export class AuthTeacher extends Component {
@@ -73,6 +75,7 @@ export class AuthTeacher extends Component {
 				const responseData = await response.json()
 				if (responseData.user) {
 					alert('Signup Successful')
+					this.props.TeacherLogin()
 					this.props.history.push('/login')
 				}
 			} catch (err) {
@@ -251,4 +254,10 @@ export class AuthTeacher extends Component {
 	}
 }
 
-export default AuthTeacher
+const mapDispatchToProps = (dispatch) => {
+	return {
+		TeacherLogin: () => dispatch(TeacherLogin()),
+	}
+}
+
+export default connect(null, mapDispatchToProps)(AuthTeacher)
