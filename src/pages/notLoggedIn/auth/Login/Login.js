@@ -45,6 +45,7 @@ export class Login extends Component {
 				)
 				const responseData = await response.json()
 				if (responseData.message === 'loggedin') {
+					this.props.login()
 					this.props.history.push('/dashboard')
 				} else {
 					alert('Invalid credentials')
