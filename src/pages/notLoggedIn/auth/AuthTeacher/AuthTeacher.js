@@ -15,7 +15,7 @@ export class AuthTeacher extends Component {
 			employeeIdError: '',
 			mobileNo: '',
 			mobileError: '',
-			department: '',
+			department: 'Computer',
 		}
 	}
 	onChange = (e) => {
@@ -49,10 +49,36 @@ export class AuthTeacher extends Component {
 		}
 		return true
 	}
-	handleSubmit = (e) => {
+	handleSubmit = async (e) => {
 		e.preventDefault()
 		const isValid = this.validate()
-		if (isValid) console.log(this.state)
+
+		if (isValid) {
+			try {
+				const response = await fetch(
+					'http://localhost:5000/api/users/signup/teacher',
+					{
+						method: 'POST',
+						headers: { 'Content-Type': 'application/json' },
+						body: JSON.stringify({
+							fullName: this.state.name,
+							email: this.state.email,
+							password: this.state.password,
+							employeeId: this.state.employeeId,
+							mobileNo: this.state.mobileNo,
+							department: this.state.department,
+						}),
+					}
+				)
+				const responseData = await response.json()
+				if (responseData.user) {
+					alert('Signup Successful')
+					this.props.history.push('/login')
+				}
+			} catch (err) {
+				alert(err)
+			}
+		}
 	}
 	render() {
 		return (

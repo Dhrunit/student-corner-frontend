@@ -15,7 +15,7 @@ export class Auth extends Component {
 			enrollmentError: '',
 			mobileNo: '',
 			mobileError: '',
-			department: '',
+			department: 'Computer',
 			rollNo: '',
 			rollError: '',
 			sem: '',
@@ -64,10 +64,50 @@ export class Auth extends Component {
 		}
 		return true
 	}
-	handleSubmit = (e) => {
+	handleSubmit = async (e) => {
+		let test = {
+			fullName: this.state.name,
+			email: this.state.email,
+			password: this.state.password,
+			enrollmentNo: this.state.enrollmentNo,
+			mobileNo: this.state.mobileNo,
+			department: this.state.department,
+			rollNo: this.state.rollNo,
+			sem: this.state.sem,
+			div: this.state.division,
+		}
+		console.log(test)
 		e.preventDefault()
 		const isValid = this.validate()
-		if (isValid) console.log(this.state)
+		if (isValid) {
+			try {
+				const response = await fetch(
+					'http://localhost:5000/api/users/signup/student',
+					{
+						method: 'POST',
+						headers: { 'Content-Type': 'application/json' },
+						body: JSON.stringify({
+							fullName: this.state.name,
+							email: this.state.email,
+							password: this.state.password,
+							enrollmentNo: this.state.enrollmentNo,
+							mobileNo: this.state.mobileNo,
+							department: this.state.department,
+							rollNo: this.state.rollNo,
+							sem: this.state.sem,
+							div: this.state.division,
+						}),
+					}
+				)
+				const responseData = await response.json()
+				if (responseData.user) {
+					alert('Signup Successful')
+					this.props.history.push('/login')
+				}
+			} catch (err) {
+				alert(err)
+			}
+		}
 	}
 	render() {
 		return (
