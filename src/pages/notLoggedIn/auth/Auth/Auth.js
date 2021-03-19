@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
+import { connect } from 'react-redux'
+import { studentLogin } from '../../../../redux/actions/index'
 import Navbar from '../../components/Navbar/Navbar'
 import './Auth.css'
 export class Auth extends Component {
@@ -102,6 +104,7 @@ export class Auth extends Component {
 				const responseData = await response.json()
 				if (responseData.user) {
 					alert('Signup Successful')
+					this.props.studentLogin()
 					this.props.history.push('/login')
 				}
 			} catch (err) {
@@ -348,5 +351,12 @@ export class Auth extends Component {
 		)
 	}
 }
-
-export default Auth
+const mapStateToProps = (state) => ({
+	loggedIn: state.isLoggedIn,
+})
+const mapDispatchToProps = (dispatch) => {
+	return {
+		studentLogin: () => dispatch(studentLogin()),
+	}
+}
+export default connect(mapStateToProps, mapDispatchToProps)(Auth)
