@@ -5,7 +5,7 @@ const userReducer = (state = initialState, action) => {
 		case CHANGE_USER_TEACHER:
 			return state
 		case CHANGE_USER_STUDENT:
-			return state
+			return (state = 'student')
 		default:
 			return state
 	}
