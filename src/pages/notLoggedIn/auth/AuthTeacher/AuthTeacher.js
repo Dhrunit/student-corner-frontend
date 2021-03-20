@@ -58,6 +58,16 @@ export class AuthTeacher extends Component {
 		const isValid = this.validate()
 
 		if (isValid) {
+			let mobileError = ''
+			let employeeIdError = ''
+			let nameError = ''
+			let passwordError = ''
+			this.setState({
+				nameError,
+				employeeIdError,
+				passwordError,
+				mobileError,
+			})
 			try {
 				const response = await fetch(
 					'http://localhost:5000/api/users/signup/teacher',

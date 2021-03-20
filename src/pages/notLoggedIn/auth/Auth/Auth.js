@@ -71,8 +71,19 @@ export class Auth extends Component {
 	handleSubmit = async (e) => {
 		e.preventDefault()
 		const isValid = this.validate()
-		console.log(typeof parseInt(this.state.rollNo))
 		if (isValid) {
+			let mobileError = ''
+			let enrollmentError = ''
+			let rollError = ''
+			let nameError = ''
+			let passwordError = ''
+			this.setState({
+				rollError,
+				nameError,
+				enrollmentError,
+				passwordError,
+				mobileError,
+			})
 			try {
 				const response = await fetch(
 					'http://localhost:5000/api/users/signup/student',
