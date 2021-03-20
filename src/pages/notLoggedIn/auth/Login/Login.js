@@ -19,7 +19,8 @@ export class Login extends Component {
 	validate = () => {
 		let passwordError = ''
 		if (this.state.password.length < 5) {
-			passwordError = 'Password should have more than 7 characters'
+			passwordError =
+				'Password length should be between 5 and 20 characters'
 		}
 		if (passwordError) {
 			this.setState({ passwordError })
@@ -31,6 +32,7 @@ export class Login extends Component {
 		e.preventDefault()
 		const isValid = this.validate()
 		if (isValid) {
+			console.log('sign')
 			try {
 				const response = await fetch(
 					'http://localhost:5000/api/users/login',
@@ -44,6 +46,17 @@ export class Login extends Component {
 					}
 				)
 				const responseData = await response.json()
+				if (
+					responseData.message ===
+					'Could not log you in please check your password'
+				) {
+					alert(responseData.message)
+					return
+				}
+				if (responseData.message === 'Invalid Login credentials') {
+					alert('Email is invalid please try again')
+					return
+				}
 				if (responseData.user.student === 'true') {
 					localStorage.setItem('userType', 'student')
 				} else {
@@ -109,7 +122,9 @@ export class Login extends Component {
 										id='password'
 										placeholder='example: John Doe'
 									/>
-									<div>{this.state.passwordError}</div>
+									<div style={{ color: 'red' }}>
+										{this.state.passwordError}
+									</div>
 								</div>
 								<div className='col-12'>
 									<button
