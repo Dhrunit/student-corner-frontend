@@ -49,6 +49,7 @@ export class AuthTeacher extends Component {
 				passwordError,
 				mobileError,
 			})
+			return false
 		}
 		return true
 	}
@@ -74,6 +75,10 @@ export class AuthTeacher extends Component {
 					}
 				)
 				const responseData = await response.json()
+				console.log(responseData)
+				if (responseData.message) {
+					alert(responseData.message)
+				}
 				if (responseData.user) {
 					await message.success('Signup Successful')
 					this.props.TeacherLogin()

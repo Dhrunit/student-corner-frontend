@@ -64,24 +64,14 @@ export class Auth extends Component {
 				passwordError,
 				mobileError,
 			})
+			return false
 		}
 		return true
 	}
 	handleSubmit = async (e) => {
-		let test = {
-			fullName: this.state.name,
-			email: this.state.email,
-			password: this.state.password,
-			enrollmentNo: this.state.enrollmentNo,
-			mobileNo: this.state.mobileNo,
-			department: this.state.department,
-			rollNo: this.state.rollNo,
-			sem: this.state.sem,
-			div: this.state.division,
-		}
-		console.log(test)
 		e.preventDefault()
 		const isValid = this.validate()
+		console.log(typeof parseInt(this.state.rollNo))
 		if (isValid) {
 			try {
 				const response = await fetch(
@@ -103,6 +93,10 @@ export class Auth extends Component {
 					}
 				)
 				const responseData = await response.json()
+				console.log(responseData)
+				if (responseData.message) {
+					alert(responseData.message)
+				}
 				if (responseData.user) {
 					await message.success('Signup Successful')
 					this.props.studentLogin()
@@ -258,9 +252,11 @@ export class Auth extends Component {
 										value={this.state.rollNo}
 										onChange={this.onChange}
 										name='rollNo'
-										type='text'
+										type='number'
 										className='form-control mb-2'
 										id='rollno'
+										min='1'
+										max='100'
 										placeholder='eg: 49'
 										required
 									/>
@@ -313,6 +309,9 @@ export class Auth extends Component {
 										placeholder='eg: 9865741230'
 										required
 									/>
+									<div style={{ color: 'red' }}>
+										{this.state.mobileError}
+									</div>
 								</div>
 								<div className='col-md-12'>
 									<label
