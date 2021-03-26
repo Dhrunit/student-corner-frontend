@@ -21,10 +21,9 @@ export default function Goals() {
 								</h1>
 							</div>
 							<p className='goals_subtitle'>
-								Lorem ipsum dolor sit amet, consectetur
-								adipiscing elit. Vestibulum congue. Neque porro
-								quisquam est qui dolorem ipsum quia dolor sit
-								amet, consectetur, adipisci velit.
+								There is no limitation on users. Everyone who is
+								eager to study or to are eager to share their
+								knowledge, are welcomed here.
 							</p>
 						</div>
 						<div className='col'>
@@ -39,10 +38,10 @@ export default function Goals() {
 								</h1>
 							</div>
 							<p className='goals_subtitle'>
-								Lorem ipsum dolor sit amet, consectetur
-								adipiscing elit. Vestibulum congue. Neque porro
-								quisquam est qui dolorem ipsum quia dolor sit
-								amet, consectetur, adipisci velit.
+								Now you don’t need to surf through different
+								textbooks, videos or websites. We have many
+								solutions to your query, in just one place. So,
+								you save your time now!
 							</p>
 						</div>
 						<div className='col'>
@@ -59,10 +58,11 @@ export default function Goals() {
 								</h1>
 							</div>
 							<p className='goals_subtitle'>
-								Lorem ipsum dolor sit amet, consectetur
-								adipiscing elit. Vestibulum congue. Neque porro
-								quisquam est qui dolorem ipsum quia dolor sit
-								amet, consectetur, adipisci velit.
+								No need to buy or read lots of textbooks now. We
+								have gathered solutions from best resources and
+								have placed them on this website. All you need
+								to solve your queries is a strong internet
+								connection and a device to browse.
 							</p>
 						</div>
 					</div>

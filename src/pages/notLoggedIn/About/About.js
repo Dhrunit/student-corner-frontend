@@ -10,28 +10,20 @@ export default function About() {
 			</h1>
 			<div className='about-subtext'>
 				<p>
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-					Aenean aliquet sodales neque, scelerisque venenatis risus
-					auctor dapibus. Class aptent taciti sociosqu ad litora
-					torquent per conubia nostra, per inceptos himenaeos.
-					Suspendisse ullamcorper lectus non ligula fringilla, sit
-					amet scelerisque sapien vulputate. Sed at risus enim.
-					Aliquam rhoncus a diam id rutrum. Quisque eu orci nec neque
-					rutrum vestibulum ac sed velit. Nam in dolor vitae est
-					rutrum blandit elementum a dui. Fusce sit amet augue
-					bibendum, congue justo a, consequat eros.
+					Student Corner is a place where you will find answers to
+					your subject queries. We have collected and placed many
+					reliable sources which can help you clear your doubts in
+					just one place. Faculties, current students, former students
+					and people who are eager to share or gain knowledge will be
+					a part of this corner.
 				</p>
 				<p>
-					Nullam at ullamcorper nunc, non facilisis tortor.
-					Suspendisse lacinia sem at eros vulputate pharetra. Proin
-					egestas laoreet turpis, sed suscipit est vehicula sit amet.
-					Nam et sagittis elit, viverra egestas dolor. Proin pharetra
-					porttitor velit. Nullam at condimentum quam. Duis auctor
-					sollicitudin erat non placerat. Morbi eget justo vel enim
-					vulputate tincidunt in a justo. Curabitur eget ultrices
-					ligula. Orci varius natoque penatibus et magnis dis
-					parturient montes, nascetur ridiculus mus. Integer et leo id
-					dui interdum consequat.
+					Student Corner is developed by some like minded and change
+					oriented students - Dhrunit Prajapati, Krisha Mehta, Naman
+					Soni, Jinkal Patel and Mohammed Contractor. Our main aim is
+					to provide best and multiple solutions to a student, at one
+					place and make sure they do not stay helpless during their
+					studies due to lack of resources.
 				</p>
 			</div>
 			<img className='about__svg' src={about} alt='about_svg' />

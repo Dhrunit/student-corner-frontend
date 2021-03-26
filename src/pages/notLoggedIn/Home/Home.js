@@ -18,8 +18,9 @@ export class Home extends Component {
 							Student <span className='blue'>Corner</span>
 						</h1>
 						<p>
-							Lorem Ipsum is simply dummy text of the printing and
-							typesetting industry.
+							Get your doubts clear and score good! Student corner
+							provides you with many explanations to your question
+							from reliable sources.
 						</p>
 						<Link className='btn-blue' to='/auth'>
 							Get Started

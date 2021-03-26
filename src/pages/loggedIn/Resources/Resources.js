@@ -32,12 +32,9 @@ export class Resources extends Component {
 						</Link>
 						<div className='sub_text'>
 							<p>
-								Lorem ipsum dolor sit amet consectetur,
-								adipisicing elit. Ab vel, veritatis obcaecati
-								minima ea culpa veniam? Amet, deserunt nisi
-								laborum quam, accusamus delectus corporis,
-								voluptatem ratione doloremque sapiente nihil
-								corrupti
+								Find your solution by going through any of these
+								videos. They are published by well known
+								teachers.
 							</p>
 						</div>
 					</div>
@@ -66,12 +63,8 @@ export class Resources extends Component {
 						</Link>
 						<div className='sub_text'>
 							<p>
-								Lorem ipsum dolor sit amet consectetur,
-								adipisicing elit. Ab vel, veritatis obcaecati
-								minima ea culpa veniam? Amet, deserunt nisi
-								laborum quam, accusamus delectus corporis,
-								voluptatem ratione doloremque sapiente nihil
-								corrupti.
+								These blogs are written by expert faculties and
+								will definitely help you while studying.
 							</p>
 						</div>
 					</div>
