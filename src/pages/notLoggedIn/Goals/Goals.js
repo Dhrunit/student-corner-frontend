@@ -7,7 +7,7 @@ import './Goals.styles.css'
 export default function Goals() {
 	return (
 		<>
-			<div className='goals'>
+			<div className='goals' id='#goals'>
 				<h1 className='section-heading'>Goals</h1>
 				<div className='max-width'>
 					<div className='row'>

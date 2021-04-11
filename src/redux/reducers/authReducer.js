@@ -1,5 +1,5 @@
 import { LOGIN, LOGOUT } from '../actions/types'
-const initialState = false
+const initialState = JSON.parse(localStorage.getItem('isLoggedIn'))
 const authReducer = (state = initialState, action) => {
 	switch (action.type) {
 		case LOGIN:

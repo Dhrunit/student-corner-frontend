@@ -1,7 +1,11 @@
 import React, { Component } from 'react'
 import Navbar from '../../components/Navbar/Navbar'
 import loginSVG from '../../../../assets/login.svg'
-import { login } from '../../../../redux/actions/index'
+import {
+	login,
+	TeacherLogin,
+	studentLogin,
+} from '../../../../redux/actions/index'
 import { connect } from 'react-redux'
 import './Login.css'
 export class Login extends Component {
@@ -58,8 +62,10 @@ export class Login extends Component {
 					return
 				}
 				if (responseData.user.student === 'true') {
+					this.props.studentLogin()
 					localStorage.setItem('userType', 'student')
 				} else {
+					this.props.TeacherLogin()
 					localStorage.setItem('userType', 'teacher')
 				}
 				if (responseData.message === 'loggedin') {
@@ -147,6 +153,8 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = (dispatch) => {
 	return {
 		login: (data) => dispatch(login(data)),
+		TeacherLogin: () => dispatch(TeacherLogin()),
+		studentLogin: () => dispatch(studentLogin()),
 	}
 }
 

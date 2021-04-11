@@ -40,6 +40,14 @@ export class Blogs extends Component {
 									<h5>{resource.subject}</h5>
 								</div>
 							</div>
+							<div className='row'>
+								<div className='col'>
+									<h2 style={{ color: '#fff' }}>
+										Description
+									</h2>
+									<h5>{resource.description}</h5>
+								</div>
+							</div>
 						</a>
 					</div>
 				))}

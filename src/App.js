@@ -1,5 +1,5 @@
 import Home from './pages/notLoggedIn/Home/Home'
-import { Route, Switch } from 'react-router-dom'
+import { Route, Switch, Redirect } from 'react-router-dom'
 import { connect } from 'react-redux'
 import Auth from './pages/notLoggedIn/auth/Auth/Auth'
 import AuthTeacher from './pages/notLoggedIn/auth/AuthTeacher/AuthTeacher'
@@ -13,21 +13,57 @@ import Resources from './pages/loggedIn/Resources/Resources'
 import Blogs from './pages/loggedIn/Resources/Blogs/Blogs'
 import Youtube from './pages/loggedIn/Resources/Youtube/Youtube'
 
-function App(props) {
+function App({ loggedIn }) {
 	return (
 		<Switch>
 			<Route path='/' exact component={Home} />
-			<Route path='/auth' exact component={Auth} />
-			<Route path='/auth/teacher' exact component={AuthTeacher} />
-			<Route path='/login' exact component={Login} />
-			<Route path='/dashboard' exact component={Dashboard} />
-			<Route path='/notes' exact component={Notes} />
-			<Route path='/notes/add' exact component={AddNotes} />
-			<Route path='/notes/edit/:id' exact component={EditNotes} />
-			<Route path='/timetable' exact component={TimeTable} />
-			<Route path='/resources' exact component={Resources} />
-			<Route path='/resources/blogs' exact component={Blogs} />
-			<Route path='/resources/youtube' exact component={Youtube} />
+			<Route path='/auth' exact component={loggedIn ? Dashboard : Auth} />
+			<Route
+				path='/auth/teacher'
+				exact
+				component={loggedIn ? Dashboard : AuthTeacher}
+			/>
+			<Route
+				path='/login'
+				exact
+				component={loggedIn ? Dashboard : Login}
+			/>
+			<Route
+				path='/dashboard'
+				exact
+				component={loggedIn ? Dashboard : Home}
+			/>
+			<Route path='/notes' exact component={loggedIn ? Notes : Home} />
+			<Route
+				path='/notes/add'
+				exact
+				component={loggedIn ? AddNotes : Home}
+			/>
+			<Route
+				path='/notes/edit/:id'
+				exact
+				component={loggedIn ? EditNotes : Home}
+			/>
+			<Route
+				path='/timetable'
+				exact
+				component={loggedIn ? TimeTable : Home}
+			/>
+			<Route
+				path='/resources'
+				exact
+				component={loggedIn ? Resources : Home}
+			/>
+			<Route
+				path='/resources/blogs'
+				exact
+				component={loggedIn ? Blogs : Home}
+			/>
+			<Route
+				path='/resources/youtube'
+				exact
+				component={loggedIn ? Youtube : Home}
+			/>
 		</Switch>
 	)
 }

@@ -1,5 +1,5 @@
 import { CHANGE_USER_STUDENT, CHANGE_USER_TEACHER } from '../actions/types'
-const initialState = 'teacher'
+const initialState = localStorage.getItem('userType')
 const userReducer = (state = initialState, action) => {
 	switch (action.type) {
 		case CHANGE_USER_TEACHER:
